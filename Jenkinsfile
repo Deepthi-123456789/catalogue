@@ -32,6 +32,13 @@ pipeline {
                 """
             }
         }
+        stage('build') {
+            steps {
+                sh """
+                    ls -la
+                """
+            }
+        }
         stage('Unit tests') {
             steps {
                 sh """
