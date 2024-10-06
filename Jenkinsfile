@@ -25,13 +25,13 @@ pipeline {
                 }
             }
         }
-        stage('Install dependencies') {
-            steps {
-                sh """
-                    npm install
-                """
-            }
-        }
+        // stage('Install dependencies') {
+        //     steps {
+        //         sh """
+        //             npm install
+        //         """
+        //     }
+        // }
         stage('Unit tests') {
             steps {
                 sh """
@@ -42,9 +42,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh """
-                    ls -la
-                    #zip -q -r catalogue.zip ./* -x ".git" -x "*.zip"
-                    #ls -ltr
+                    echo "this is build"
                 """
             }
         }
