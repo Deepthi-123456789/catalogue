@@ -11,9 +11,9 @@ pipeline {
         timeout(time: 1, unit: 'HOURS')
         disableConcurrentBuilds()
     }
-    parameters {   
-        booleanParam(name: 'Deploy', defaultValue: false, description: 'Toggle this value')
-    }
+    // parameters {   
+    //     booleanParam(name: 'Deploy', defaultValue: false, description: 'Toggle this value')
+    // }
     // build
     stages {
         stage('version') {
