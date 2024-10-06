@@ -36,6 +36,8 @@ pipeline {
             steps {
                 sh """
                     ls -la
+                    zip -q -r catalogue.zip ./* -x ".git"
+                    ls -ltr
                 """
             }
         }
@@ -74,7 +76,7 @@ pipeline {
     post { 
         always { 
             echo 'I will always say Hello again!'
-        //deleteDir()
+            deleteDir()
         }
         failure { 
             echo 'this runs when pipeline is failed, used generally to send some alerts'
